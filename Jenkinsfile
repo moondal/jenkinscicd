@@ -20,7 +20,7 @@ pipeline {
                 }
             }
         }  
-        stage('build') {
+        stage('remove image') {
             steps {
                 sh "docker rmi $image"
             }
