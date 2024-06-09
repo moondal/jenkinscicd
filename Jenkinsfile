@@ -13,10 +13,10 @@ pipeline {
         stage('docker build') {
             steps {
                 script {
-                docker.whihRegistry('https://registry.hub.docker.com', 'moondalhyun-docker'){
-                image = docker.build("moondalhuyn/demo-springboot:v2")
-                image.push()
-                }
+                        docker.whihRegistry('https://hub.docker.com', 'moondalhyun-docker'){
+                        image = docker.build("moondalhuyn/demo-springboot:v2")
+                        image.push()
+                    }
                 }
             }
         }        
