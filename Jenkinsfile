@@ -19,6 +19,11 @@ pipeline {
                     }
                 }
             }
-        }        
+        }  
+        stage('build') {
+            steps {
+                sh "docker rmi $image"
+            }
+        }              
     }
 }
