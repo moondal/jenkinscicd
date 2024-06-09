@@ -4,7 +4,7 @@ pipeline {
         maven 'maven-3.8.1'
     }    
     environment {
-        registry = 'moondalhuyn/demo-springboot'
+        registry = 'registry.hub.docker.com/moondalhuyn/demo-springboot'
         registryCredential = 'moondalhyun-docker'}
     stages {
         stage('build') {
