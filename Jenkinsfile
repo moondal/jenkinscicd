@@ -5,10 +5,20 @@ pipeline {
     }    
 
     stages {
-        stage('Hello') {
+        stage('build') {
             steps {
                 sh "mvn clean package"
             }
         }
+        stage('docker build') {
+            steps {
+                script {
+                docker.whihRegistry('https://registry.hub.docker.com', 'moondalhyun-docker'){
+                image = docker.build("moondalhuyn/demo-springboot:v2")
+                image.push()
+                }
+                }
+            }
+        }        
     }
 }
