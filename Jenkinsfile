@@ -14,7 +14,7 @@ pipeline {
             steps {
                 script {
                         docker.withRegistry('https://registry.hub.docker.com', 'moondalhyun-docker'){
-                        image = docker.build("moondalhuyn/demo-springboot:v2")
+                        image = docker.build("moondalhuyn/demo-springboot:${BUILD_NUMBER}")
                         image.push()
                     }
                 }
