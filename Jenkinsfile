@@ -3,7 +3,9 @@ pipeline {
     tools {
         maven 'maven-3.8.1'
     }    
-
+    environment {
+        registry = 'moondalhuyn/demo-springboot'
+        registryCredential = 'moondalhyun-docker'}
     stages {
         stage('build') {
             steps {
@@ -22,7 +24,7 @@ pipeline {
         }  
         stage('remove image') {
             steps {
-                sh "docker rmi $image"
+                sh "docker rmi $registry"
             }
         }              
     }
